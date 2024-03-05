@@ -28,6 +28,7 @@ require "settings/init.php";
         <div class="col-2">
             <div class="d-flex justify-content-center">
                 <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
+                    <a href="#" class="stretched-link"></a>
                     <div class="position-absolute bottom-0 pb-4">
                         <h3 class="text-light fw-semibold">Playstation</h3>
                     </div>
