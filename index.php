@@ -21,6 +21,12 @@ require "settings/init.php";
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
+
+
+<div class="Logo">Logo</div>
+
+
+
 <body>
 <h1>Seb test</h1>
 <h2>Jon test</h2>
@@ -54,7 +60,7 @@ require "settings/init.php";
 </div>
 
 
-<list>testnwnwnwnwnwnwwntest</list>
+
 
 
 
