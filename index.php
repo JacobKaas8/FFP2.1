@@ -17,7 +17,7 @@ require "settings/init.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<br>
 <div class="row g-2">
 	<?php
 	$produkter = $db->sql("SELECT * FROM produkter");
@@ -46,6 +46,13 @@ require "settings/init.php";
 	}
 	?>
 </div>
+
+
+<list>testnwnwnwnwnwnwwntest</list>
+
+wjww
+
+
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
