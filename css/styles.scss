@@ -37,14 +37,45 @@ $dark:#383838;
 
 // 5. Du kan lave styling her...
 
-.Logo{
-	margin: auto;
-	vertical-align: middle;
-}
 
-.bgimg{
-	background-size: auto;
-	background-repeat: no-repeat;
-	//background-image: ...Mangler...
-	background-position:center;
+
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Arial, sans-serif; /* Change font family if desired */
+}
+.side {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url('img/BG1 1.png'); /* Replace 'your-image.jpg' with the path to your image */
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.logo {
+	width: 150px; /* Adjust width as needed */
+	height: auto; /* Maintain aspect ratio */
+	margin-bottom: 20px; /* Adjust spacing as needed */
+}
+.text {
+	text-align: center;
+	margin-bottom: 20px; /* Adjust spacing as needed */
+	color: white; /* Text color */
+}
+.button {
+	padding: 10px 20px;
+	background-color: #007bff; /* Button background color */
+	color: white; /* Button text color */
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.button:hover {
+	background-color: #0056b3; /* Button background color on hover */
 }

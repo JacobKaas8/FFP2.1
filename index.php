@@ -5,8 +5,8 @@ require "settings/init.php";
 <html lang="da">
 <head>
 	<meta charset="utf-8">
-	
-	<title>Sigende titel</title>
+
+    <title>Welcome to Nostalgia World</title>
 	
 	<meta name="robots" content="All">
 	<meta name="author" content="Udgiver">
@@ -28,9 +28,12 @@ require "settings/init.php";
 
 
 <body>
-<h1>Seb test</h1>
-<h2>Jon test</h2>
-<div class="row g-2">
+<div class="side">
+    <img src="your-logo.png" alt="Logo" class="logo"> <!-- Replace 'your-logo.png' with your logo image -->
+    <div class="text">
+        Velkommen til en verden af nostalgi og retro spil, film og musik
+    </div>
+    <button class="button">Start</button>
 
 </div>
 
