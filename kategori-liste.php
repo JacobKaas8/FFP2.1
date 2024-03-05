@@ -21,50 +21,31 @@ require "settings/init.php";
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-
-
-<div class="Logo">Logo</div>
-
-
-
 <body>
-<h1 class="text-catCol1">Seb test</h1>
-<h2 class="text-catCol9">Jon test</h2>
-<div class="row g-2">
-    <?php
-    $produkter = $db->sql("SELECT * FROM produkter");
-    foreach($produkter as $produkt) {
-        ?>
-        <div class="col-12 col-md-6">
-            <div class="card w-100">
-                <div class="card-header">
-                    <?php
-                    echo $produkt->prodNavn;
-                    ?>
-                </div>
-                <div class="card-body">
-                    <?php
-                    // Indsæt andet felt fra database
-                    ?>
-                </div>
-                <div class="card-footer text-muted">
-                    <?php
-                    // Indsæt andet felt fra database
-                    ?>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <div class="d-flex justify-content-center">
+                <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
+                    <div class="position-absolute bottom-0 pb-4">
+                        <h3 class="text-light fw-semibold">Playstation</h3>
+                    </div>
                 </div>
             </div>
         </div>
-        <?php
-    }
-    ?>
+        <div class="col-8">
+            <div class="d-flex justify-content-center mt-4">
+                <?php include("global.php");?>
+            </div>
+        </div>
+        <div class="col-2 mt-5">
+            <?php include("menu.php");?>
+        </div>
+    </div>
 </div>
 
-
-
-
-
-
-
+<script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
