@@ -1,15 +1,9 @@
-<nav class="navbar">
-    <div class="container">
-        <form>
-            <div class="row mt-5 justify-content-center"> <!-- Add justify-content-center to center the row -->
-                <div class="col-8">
-                    <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1">Søg</span>
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
-                               aria-describedby="basic-addon1">
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</nav>
+<div class="d-flex justify-content-center">
+    <form class="w-100 mt-5">
+        <div class="input-group">
+            <input type="text" class="form-control border-2 border-end-0 rounded-start-5 fw-semibold py-3 px-5" placeholder="Søg på spil, film eller musik" aria-label="Search"
+                   aria-describedby="basic-addon1">
+            <button class="input-group-text bg-transparent text-dark border-2 border-start-0 rounded-end-5 py-3 px-5" id="basic-addon1"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+        </div>
+    </form>
+</div>

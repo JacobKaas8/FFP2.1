@@ -51,9 +51,7 @@ require "settings/init.php";
             </div>
         </div>
         <div class="col-8">
-            <div class="d-flex justify-content-center mt-4">
-                <?php include("global.php");?>
-            </div>
+            <?php include("global.php"); ?>
         </div>
         <div class="col-2 mt-5">
             <?php include("menu.php");?>

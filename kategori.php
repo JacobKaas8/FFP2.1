@@ -18,7 +18,15 @@ require "settings/init.php";
 </head>
 
 <body>
-<?php include("global.php");?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <?php include("global.php");?>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
 <div class="row g-5 justify-content-center text-center mt-5 text-light mx-5">
     <?php
     $categories = $db->sql("SELECT * FROM categories");
@@ -37,6 +45,7 @@ require "settings/init.php";
     ?>
 </div>
 
+<script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
