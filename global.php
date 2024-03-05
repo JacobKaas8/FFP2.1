@@ -1,15 +1,15 @@
 <nav class="navbar">
-    <div class="container justify-content-center">
-    <form>
-        <div class="row">
-            <div class="col-8 w-100">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">@</span>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                           aria-describedby="basic-addon1">
+    <div class="container">
+        <form>
+            <div class="row mt-5 justify-content-center"> <!-- Add justify-content-center to center the row -->
+                <div class="col-8">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Søg</span>
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                               aria-describedby="basic-addon1">
+                    </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
     </div>
 </nav>
