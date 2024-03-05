@@ -17,7 +17,6 @@ require "settings/init.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<br>
 <body>
 <h1>Seb test</h1>
 <h2>Jon test</h2>
