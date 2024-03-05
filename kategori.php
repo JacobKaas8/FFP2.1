@@ -25,11 +25,13 @@ require "settings/init.php";
     foreach($categories as $category) {
         //echo $category->categoryColor;
         ?>
-        <div class="col-4 bg-success p-3">
+        <div class="col-4">
+            <div class="bg-success p-5">
             <img src="<?php echo $category->categoryPicture; ?>" class="opacity-75">
                     <?php
                     echo $category->categoryName;
                     ?>
+            </div>
         </div>
         <?php
     }

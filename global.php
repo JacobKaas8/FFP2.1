@@ -1,8 +1,8 @@
-<nav class="navbar bg-body-tertiary">
-    <div class="container">
+<nav class="navbar">
+    <div class="container justify-content-center">
     <form>
-        <div class="row justify-content-center">
-            <div class="col-8">
+        <div class="row">
+            <div class="col-8 w-100">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">@</span>
                     <input type="text" class="form-control" placeholder="Username" aria-label="Username"
