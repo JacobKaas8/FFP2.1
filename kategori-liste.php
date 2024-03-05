@@ -33,6 +33,22 @@ require "settings/init.php";
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-center mt-4">
+                <div class="d-flex flex-column gap-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                        <label class="form-check-label" for="flexCheckDefault1">
+                            Action
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
+                        <label class="form-check-label" for="flexCheckDefault2">
+                            Adventure
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-8">
             <div class="d-flex justify-content-center mt-4">
