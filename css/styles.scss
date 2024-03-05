@@ -10,7 +10,18 @@ $link-decoration: none;
 
 // 4. Include any default map overrides here
 $custom-colors: (
-	"farve": $cyan-400,
+	"catCol1": #0094D3,
+	"catCol2": #003BD3,
+	"catCol3": #005C90,
+	"catCol4": #B6BA00,
+	"catCol5": #3EC000,
+	"catCol6": #00891E,
+	"catCol7": #9000D3,
+	"catCol8": #D300A5,
+	"catCol9": #D30000,
+	"catCol10": #D37F00,
+	"catCol11": #00D3AD,
+	"catCol12": #626262,
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -24,7 +35,6 @@ $secondary:#000000;
 $dark:#383838;
 
 
-
 // 5. Du kan lave styling her...
 
 .Logo{
@@ -35,6 +45,6 @@ $dark:#383838;
 .bgimg{
 	background-size: auto;
 	background-repeat: no-repeat;
-	background-image: url("img/BG1 1.png") ;
+	//background-image: ...Mangler...
 	background-position:center;
 }

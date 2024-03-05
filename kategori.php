@@ -6,7 +6,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Kategori Liste</title>
+    <title>Kategorier</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -23,13 +23,14 @@ require "settings/init.php";
     <?php
     $categories = $db->sql("SELECT * FROM categories");
     foreach($categories as $category) {
-        //echo $category->categoryColor;
         ?>
-        <div class="col-4 bg-success p-3">
+        <div class="col-3">
+            <div class="bg-<?php echo $category->catColor ?> p-5" style="min-height: 200px; width: 200px">
             <img src="<?php echo $category->categoryPicture; ?>" class="opacity-75">
                     <?php
                     echo $category->categoryName;
                     ?>
+            </div>
         </div>
         <?php
     }
