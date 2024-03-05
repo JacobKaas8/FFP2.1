@@ -18,8 +18,9 @@ require "settings/init.php";
 </head>
 
 <br>
-
+<body>
 <h1>Seb test</h1>
+<h2>Jon test</h2>
 <div class="row g-2">
 	<?php
 	$produkter = $db->sql("SELECT * FROM produkter");
