@@ -10,6 +10,10 @@ $link-decoration: none;
 
 // 4. Include any default map overrides here
 $custom-colors: (
+	"primary": #F24822,
+	"secondary": #000000,
+	"light": #FAFAFA,
+	"dark": #383838,
 	"catCol1": #0094D3,
 	"catCol2": #003BD3,
 	"catCol3": #005C90,
@@ -30,7 +34,7 @@ $secondary: #000000;
 $light: #FAFAFA;
 $dark: #383838;
 $link-color: $dark;
-$link-shade-percentage: 100%;
+$link-shade-percentage: 40%;
 $link-hover-color: shift-color($link-color, $link-shade-percentage);
 $font-size-base: 14pt;
 $h1-font-size: 26pt;
