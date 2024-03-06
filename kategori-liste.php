@@ -59,7 +59,7 @@ require "settings/init.php";
             foreach ($products as $product) {
 
             ?>
-            <div class="col-4">
+            <div class="col-4 mt-3">
                 <?php
                 echo $product->productPicture . "<br>";
                 echo $product->productName . "<br>";
