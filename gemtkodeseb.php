@@ -36,7 +36,7 @@ require "settings/init.php";
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-4">
-                    <div class="d-flex flex-column gap-3">
+                    <div class="d-flex flex-column gap-3 fs-2 fw-medium">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
                             <label class="form-check-label" for="flexCheckDefault1">

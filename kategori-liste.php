@@ -35,7 +35,7 @@ require "settings/init.php";
                 </div>
             </div>
             <div class="d-flex justify-content-center mt-4">
-                <div class="d-flex flex-column gap-3">
+                <div class="d-flex flex-column gap-3 fs-2 fw-medium">
                     <?php
                     $genres = $db->sql("SELECT * FROM genres ORDER BY genreName asc");
                     foreach($genres as $genre) {
