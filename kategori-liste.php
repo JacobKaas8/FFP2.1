@@ -53,13 +53,26 @@ require "settings/init.php";
             </div>
         </div>
         <div class="col-8">
-            <?php include("global.php");
+            <?php include("global.php");?>
+            <div class="col-12 d-flex justify-content-end mt-2">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <?php
 
             $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId"); //javascript for sorting tror jeg (order status)
             foreach ($products as $product) {
 
             ?>
-            <div class="col-4 mt-3">
+            <div class="col-4">
                 <?php
                 echo $product->productPicture . "<br>";
                 echo $product->productName . "<br>";
