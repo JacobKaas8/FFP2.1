@@ -29,7 +29,13 @@ require "settings/init.php";
 </div>
 <div class="row g-5 d-flex justify-content-center text-center mt-2 text-light mx-5">
     <?php
-    $categories = $db->sql("SELECT * FROM categories");
+    $sqlAdd = "";
+    $bind = [];
+    if (!empty($_GET["categoryId"])) {
+        $sqlAdd = " AND categoryId = :categoryId";
+        $bind["categoryId"] = $_GET["categoryId"];
+    }
+    $categories = $db->sql("SELECT * FROM categories$sqlAdd", $bind);
     foreach($categories as $category) {
         ?>
         <div class="col-3">
