@@ -56,16 +56,21 @@ require "settings/init.php";
         </div>
         <div class="col-8">
             <?php include("global.php");?>
-            <div class="col-12 d-flex justify-content-end mt-2">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">
-                        A-Å
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Å-A</a></li>
-                        <li><a class="dropdown-item" href="#">Pris: Lav til Høj</a></li>
-                        <li><a class="dropdown-item" href="#">Pris: Høj til Lav</a></li>
-                    </ul>
+            <div class="row mt-2">
+                <div class="col-6 mt-2">
+                    <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a></span>
+                </div>
+                <div class="col-6 d-flex justify-content-end">
+                    <div class="dropdown">
+                        <button class="btn bg-white border border-2 border-dark border-opacity-25 rounded-3 text-start py-2 px-4 dropdown-toggle" style="min-width: 190px;" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">
+                            A-Å
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Å-A</a></li>
+                            <li><a class="dropdown-item" href="#">Pris: Lav til Høj</a></li>
+                            <li><a class="dropdown-item" href="#">Pris: Høj til Lav</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <?php
@@ -74,8 +79,8 @@ require "settings/init.php";
             foreach ($products as $product) {
 
             ?>
-            <div class="col-4">
-                <div class="produkt-box">
+            <div class="col-4 p-3">
+                <div class="produkt-box position-relative">
                     <a href="#" class="stretched-link"><img class="img-fluid" src="img/<?php echo $product->productPicture ?>" alt=" <?php echo $product->productName ?> "></a>
                     <h2 class="pt-2"> <?php echo $product->productName ?></h2>
                     <span> <?php echo $product->genreName //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";?> </span>

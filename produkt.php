@@ -40,6 +40,11 @@ require "settings/init.php";
         </div>
         <div class="col-8">
             <?php include("global.php"); ?>
+            <div class="row mt-2">
+                <div class="col-12 mt-2">
+                    <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover">Spil navn</a></span>
+                </div>
+            </div>
             <div class="row mt-5">
                 <div class="col-4 p-3">
                     <a href="#"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land" class="w-100"></a>

@@ -28,6 +28,11 @@ require "settings/init.php";
         <div class="col-2"></div>
         <div class="col-8">
             <?php include("global.php"); ?>
+            <div class="row mt-2">
+                <div class="col-12 mt-2">
+                    <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kurv.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kurv</a></span>
+                </div>
+            </div>
             <div class="mt-4">
                 <h2 class="pt-2 fw-semibold">Din kurv</h2>
                 <div class="row mt-3">
