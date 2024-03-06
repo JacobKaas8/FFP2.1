@@ -6,8 +6,7 @@ require "settings/init.php";
 <head>
 	<meta charset="utf-8">
 
-    <title>Welcome to Nostalgia World</title>
-	
+
 	<meta name="robots" content="All">
 	<meta name="author" content="Udgiver">
 	<meta name="copyright" content="Information om copyright">
@@ -22,18 +21,14 @@ require "settings/init.php";
 </head>
 
 
-
-<div class="Logo">Logo</div>
-
-
-
 <body>
 <div class="side">
     <img src="your-logo.png" alt="Logo" class="logo"> <!-- Replace 'your-logo.png' with your logo image -->
     <div class="text">
-        Velkommen til en verden af nostalgi og retro spil, film og musik
+        Velkommen til en verden af nostalgi og <br>
+        retro spil, film og musik
     </div>
-    <button class="button">Start</button>
+    <button type="button" class="btn btn-outline-primary">Start</button>
 
 </div>
 

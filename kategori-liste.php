@@ -96,10 +96,13 @@ require "settings/init.php";
 
 <script>
 
-    document.querySelector("#dropdown");
+    const dropdown = document.querySelector("#dropdown");
     const sort = "ORDER BY productName ASC";
 
     function changeSort(){
+
+    }
+    function productType(){
 
     }
 
