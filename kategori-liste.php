@@ -6,7 +6,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Sigende titel</title>
+    <title>Kategori Liste</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -26,70 +26,64 @@ require "settings/init.php";
 <div class="container-fluid">
     <div class="row">
         <div class="col-2">
-            <div class="sticky-top">
-                <div class="d-flex justify-content-center">
-                    <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
-                        <a href="#" class="stretched-link"></a>
-                        <div class="position-absolute bottom-0 pb-4">
-                            <h3 class="text-light fw-semibold">Playstation</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-4">
-                    <div class="d-flex flex-column gap-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                            <label class="form-check-label" for="flexCheckDefault1">
-                                Action
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                            <label class="form-check-label" for="flexCheckDefault2">
-                                Adventure
-                            </label>
-                        </div>
+            <div class="d-flex justify-content-center">
+                <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
+                    <a href="#" class="stretched-link"></a>
+                    <div class="position-absolute bottom-0 pb-4">
+                        <h3 class="text-light fw-semibold">Playstation</h3>
                     </div>
                 </div>
             </div>
-
+            <div class="d-flex justify-content-center mt-4">
+                <div class="d-flex flex-column gap-3">
+                    <?php
+                    $genres = $db->sql("SELECT * FROM genres ORDER BY genreName asc");
+                    foreach($genres as $genre) {
+                    ?>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
+                        <label class="form-check-label" for="flexCheckDefault1">
+                            <?php echo $genre->genreName ?>
+                        </label>
+                    </div>
+                        <?php
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
         <div class="col-8">
-            <?php include("global.php"); ?>
-            <div class="row mt-5">
-                <div class="col-4 p-3">
-                    <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                        <h2 class="pt-2">Kirby Dream Land</h2>
-                        <span>Action, Adventure,</span>
-                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                    </div>
-                </div>
-                <div class="col-4 p-3">
-                    <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                        <h2 class="pt-2">Kirby Dream Land</h2>
-                        <span>Action, Adventure,</span>
-                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                    </div>
-                </div>
-                <div class="col-4 p-3">
-                    <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                        <h2 class="pt-2">Kirby Dream Land</h2>
-                        <span>Action, Adventure,</span>
-                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                    </div>
-                </div>
-                <div class="col-4 p-3">
-                    <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                        <h2 class="pt-2">Kirby Dream Land</h2>
-                        <span>Action, Adventure,</span>
-                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                    </div>
+            <?php include("global.php");?>
+            <div class="col-12 d-flex justify-content-end mt-2">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
                 </div>
             </div>
+            <?php
+
+            $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId"); //javascript for sorting tror jeg (order status)
+            foreach ($products as $product) {
+
+            ?>
+            <div class="col-4">
+                <?php
+                echo $product->productPicture . "<br>";
+                echo $product->productName . "<br>";
+                echo $product->genreName. "<br>";
+                //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";
+                echo $product->productPrice . ",- DKK";
+                ?>
+            </div>
+                <?php
+            }
+            ?>
         </div>
         <div class="col-2 mt-5">
             <?php include("menu.php");?>
