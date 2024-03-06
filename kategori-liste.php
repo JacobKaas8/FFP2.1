@@ -6,7 +6,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Sigende titel</title>
+    <title>Kategori Liste</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -36,23 +36,41 @@ require "settings/init.php";
             </div>
             <div class="d-flex justify-content-center mt-4">
                 <div class="d-flex flex-column gap-3">
+                    <?php
+                    $genres = $db->sql("SELECT * FROM genres ORDER BY genreName asc");
+                    foreach($genres as $genre) {
+                    ?>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
                         <label class="form-check-label" for="flexCheckDefault1">
-                            Action
+                            <?php echo $genre->genreName ?>
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                        <label class="form-check-label" for="flexCheckDefault2">
-                            Adventure
-                        </label>
-                    </div>
+                        <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
         <div class="col-8">
-            <?php include("global.php"); ?>
+            <?php include("global.php");
+
+            $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId"); //javascript for sorting tror jeg (order status)
+            foreach ($products as $product) {
+
+            ?>
+            <div class="col-4">
+                <?php
+                echo $product->productPicture . "<br>";
+                echo $product->productName . "<br>";
+                echo $product->genreName. "<br>";
+                //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";
+                echo $product->productPrice . ",- DKK";
+                ?>
+            </div>
+                <?php
+            }
+            ?>
         </div>
         <div class="col-2 mt-5">
             <?php include("menu.php");?>
