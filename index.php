@@ -5,8 +5,8 @@ require "settings/init.php";
 <html lang="da">
 <head>
 	<meta charset="utf-8">
-	
-	<title>Sigende titel</title>
+
+    <title>Welcome to Nostalgia World</title>
 	
 	<meta name="robots" content="All">
 	<meta name="author" content="Udgiver">
@@ -28,35 +28,13 @@ require "settings/init.php";
 
 
 <body>
-<h1>Seb test</h1>
-<h2>Jon test</h2>
-<div class="row g-2">
-	<?php
-	$produkter = $db->sql("SELECT * FROM produkter");
-	foreach($produkter as $produkt) {
-		?>
-		<div class="col-12 col-md-6">
-			<div class="card w-100">
-				<div class="card-header">
-					<?php
-					echo $produkt->prodNavn;
-					?>
-				</div>
-				<div class="card-body">
-					<?php
-					// Indsæt andet felt fra database
-					?>
-				</div>
-				<div class="card-footer text-muted">
-					<?php
-					// Indsæt andet felt fra database
-					?>
-				</div>
-			</div>
-		</div>
-		<?php
-	}
-	?>
+<div class="side">
+    <img src="your-logo.png" alt="Logo" class="logo"> <!-- Replace 'your-logo.png' with your logo image -->
+    <div class="text">
+        Velkommen til en verden af nostalgi og retro spil, film og musik
+    </div>
+    <button class="button">Start</button>
+
 </div>
 
 

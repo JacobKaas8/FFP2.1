@@ -23,28 +23,72 @@ $custom-colors: (
 	"catCol11": #00D3AD,
 	"catCol12": #626262,
 );
-
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+$primary: #F24822;
+$secondary: #000000;
+$light: #FAFAFA;
+$dark: #383838;
+$font-size-base: 14pt;
+$h1-font-size: 26pt;
+$h2-font-size: 18pt;
+$h3-font-size: 16pt;
 
 @import "bootstrapComponents";
 
-$primary:#F24822;
-
-$secondary:#000000;
-
-$dark:#383838;
-
-
 // 5. Du kan lave styling her...
-
-.Logo{
-	margin: auto;
-	vertical-align: middle;
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: Rajdhani, sans-serif; /* Change font family if desired */
+	font-size: 14pt;
+	letter-spacing: 0.5pt;
+}
+.side {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-image: url('img/BG1 1.png'); /* Replace 'your-image.jpg' with the path to your image */
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.logo {
+	width: 150px; /* Adjust width as needed */
+	height: auto; /* Maintain aspect ratio */
+	margin-bottom: 20px; /* Adjust spacing as needed */
+}
+.text {
+	text-align: center;
+	margin-bottom: 20px; /* Adjust spacing as needed */
+	color: white; /* Text color */
+}
+.button {
+	padding: 10px 20px;
+	background-color: #007bff; /* Button background color */
+	color: white; /* Button text color */
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.button:hover {
+	background-color: #0056b3; /* Button background color on hover */
 }
 
-.bgimg{
-	background-size: auto;
-	background-repeat: no-repeat;
-	//background-image: ...Mangler...
-	background-position:center;
+.bookmark {
+	height: 224px;
+}
+
+.menu-circle {
+	width: 118px;
+	height: 118px;
+
+	.icon {
+		font-size: 34pt;
+	}
 }
