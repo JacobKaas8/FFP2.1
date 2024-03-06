@@ -75,14 +75,13 @@ require "settings/init.php";
 
             ?>
             <div class="col-4">
-                <?php
-                echo $product->productPicture . "<br>";
-                echo $product->productName . "<br>";
-                echo $product->genreName. "<br>";
-                //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";
-                echo $product->productPrice . ",- DKK";
-                ?>
+                <div class="produkt-box">
+                    <a href="#" class="stretched-link"><img src="img/<?php $product->productPicture ?>" alt=" <?php echo $product->productName ?> "></a>
+                    <h2 class="pt-2"> <?php echo $product->productName ?></h2>
+                    <span> <?php echo $product->genreName //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";?> </span>
+                    <p class="fs-1 fw-semibold pt-2"> <?php echo $product->productPrice . ",- DKK"; ?> </p>
             </div>
+        </div>
                 <?php
             }
             ?>
