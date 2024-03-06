@@ -80,8 +80,8 @@ require "settings/init.php";
                 </div>
             </div>
             <div class="text-center mt-3">
-                <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3">Få fremvist varer</button></a>
-                <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Tilføj mere til kurv</button></a>
+                <a type="button" id="viewBtn" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3" data-bs-toggle="modal" data-bs-target="#viewProducts">Få fremvist varer</a>
+                <a href="kategori.php" type="button" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Tilføj mere til kurv</a>
             </div>
 
         </div>
@@ -107,8 +107,7 @@ require "settings/init.php";
                 </div>
                 <div class="col-4 p-3">
                     <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp"
-                                                                alt="Kirby Dream Land"></a>
+                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
                         <h2 class="pt-2">Kirby Dream Land</h2>
                         <span>Action, Adventure,</span>
                         <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
@@ -116,8 +115,7 @@ require "settings/init.php";
                 </div>
                 <div class="col-4 p-3">
                     <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp"
-                                                                alt="Kirby Dream Land"></a>
+                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
                         <h2 class="pt-2">Kirby Dream Land</h2>
                         <span>Action, Adventure,</span>
                         <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
@@ -126,6 +124,22 @@ require "settings/init.php";
             </div>
         </div>
         <div class="col2"></div>
+    </div>
+</div>
+
+<div class="modal" id="viewProducts" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark bg-light">
+            <div class="modal-header">
+                <h5 class="modal-title">Dine varer er på vej</h5>
+            </div>
+            <div class="modal-body">
+                <p>Din forespørgsel er nu sendt til vores lager. En medarbejder vil komme og betjene dig om et øjeblik.<br><br>Dette vindue kan nu lukkes.</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <a href="index.php" type="button" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Luk vindue</a>
+            </div>
+        </div>
     </div>
 </div>
 
