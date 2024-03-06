@@ -25,7 +25,8 @@ require "settings/init.php";
 <div class="side">
     <img src="your-logo.png" alt="Logo" class="logo"> <!-- Replace 'your-logo.png' with your logo image -->
     <div class="text">
-        Velkommen til en verden af nostalgi og retro spil, film og musik
+        Velkommen til en verden af nostalgi og <br>
+        retro spil, film og musik
     </div>
     <button type="button" class="btn btn-outline-primary">Start</button>
 
