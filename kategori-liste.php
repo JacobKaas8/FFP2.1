@@ -76,7 +76,7 @@ require "settings/init.php";
             ?>
             <div class="col-4">
                 <div class="produkt-box">
-                    <a href="#" class="stretched-link"><img src="img/<?php $product->productPicture ?>" alt=" <?php echo $product->productName ?> "></a>
+                    <a href="#" class="stretched-link"><img class="img-fluid" src="img/<?php echo $product->productPicture ?>" alt=" <?php echo $product->productName ?> "></a>
                     <h2 class="pt-2"> <?php echo $product->productName ?></h2>
                     <span> <?php echo $product->genreName //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";?> </span>
                     <p class="fs-1 fw-semibold pt-2"> <?php echo $product->productPrice . ",- DKK"; ?> </p>
