@@ -85,19 +85,16 @@ a {
 .text {
 	text-align: center;
 	margin-bottom: 20px; /* Adjust spacing as needed */
-	color: white; /* Text color */
+	color: black; /* Text color */
 }
 .button {
 	padding: 10px 20px;
-	background-color: #007bff; /* Button background color */
+	background-color: #F24822; /* Button background color */
 	color: white; /* Button text color */
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
-}
-.button:hover {
-	background-color: #0056b3; /* Button background color on hover */
 }
 
 .bookmark {
