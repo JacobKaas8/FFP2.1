@@ -38,7 +38,7 @@ require "settings/init.php";
                 <div class="row mt-3">
                     <div class="col-8">
                         <div class="row position-relative">
-                            <a href="#" class="stretched-link"></a>
+                            <a href="produkt.php" class="stretched-link"></a>
                             <div class="col-3">
                                 <img src="img/kirbys-dream-land-game-boy.webp"  alt="Kirby Dream Land" class="img-fluid w-100">
                             </div>
@@ -64,7 +64,7 @@ require "settings/init.php";
                 <div class="row mt-3">
                     <div class="col-8">
                         <div class="row position-relative">
-                            <a href="#" class="stretched-link"></a>
+                            <a href="produkt.php" class="stretched-link"></a>
                             <div class="col-3">
                                 <img src="img/kirbys-dream-land-game-boy.webp"  alt="Kirby Dream Land" class="img-fluid w-100">
                             </div>
