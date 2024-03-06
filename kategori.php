@@ -27,7 +27,7 @@ require "settings/init.php";
         <div class="col-2"></div>
     </div>
 </div>
-<div class="row g-5 d-flex justify-content-center text-center mt-5 text-light mx-5">
+<div class="row g-5 d-flex justify-content-center text-center mt-2 text-light mx-5">
     <?php
     $categories = $db->sql("SELECT * FROM categories");
     foreach($categories as $category) {
