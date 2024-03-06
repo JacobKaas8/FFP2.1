@@ -65,6 +65,8 @@ require "settings/init.php";
                     <p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     <a href="#" class="link-primary">Læs mere</a>
                     <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                    <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button></a>
+                    <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
                 </div>
             </div>
         </div>
