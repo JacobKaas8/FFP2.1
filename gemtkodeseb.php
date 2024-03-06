@@ -6,7 +6,7 @@ require "settings/init.php";
 <head>
     <meta charset="utf-8">
 
-    <title>Produkt navn</title>
+    <title>Kategori Liste</title>
 
     <meta name="robots" content="All">
     <meta name="author" content="Udgiver">
@@ -57,16 +57,36 @@ require "settings/init.php";
             <?php include("global.php"); ?>
             <div class="row mt-5">
                 <div class="col-4 p-3">
-                    <a href="#"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land" class="w-100"></a>
+                    <div class="produkt-box position-relative">
+                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
+                        <h2 class="pt-2">Kirby Dream Land</h2>
+                        <span>Action, Adventure,</span>
+                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                    </div>
                 </div>
-                <div class="col-8 p-3">
-                    <h2 class="pt-2">Kirby Dream Land</h2>
-                    <span>Action, Adventure,</span>
-                    <p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    <a href="#" class="link-primary">Læs mere</a>
-                    <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                    <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button></a>
-                    <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
+                <div class="col-4 p-3">
+                    <div class="produkt-box position-relative">
+                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
+                        <h2 class="pt-2">Kirby Dream Land</h2>
+                        <span>Action, Adventure,</span>
+                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                    </div>
+                </div>
+                <div class="col-4 p-3">
+                    <div class="produkt-box position-relative">
+                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
+                        <h2 class="pt-2">Kirby Dream Land</h2>
+                        <span>Action, Adventure,</span>
+                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                    </div>
+                </div>
+                <div class="col-4 p-3">
+                    <div class="produkt-box position-relative">
+                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
+                        <h2 class="pt-2">Kirby Dream Land</h2>
+                        <span>Action, Adventure,</span>
+                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                    </div>
                 </div>
             </div>
         </div>

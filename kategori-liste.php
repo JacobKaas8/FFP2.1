@@ -56,13 +56,13 @@ require "settings/init.php";
             <?php include("global.php");?>
             <div class="col-12 d-flex justify-content-end mt-2">
                 <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">
+                        A-Å
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">Å-A</a></li>
+                        <li><a class="dropdown-item" href="#">Pris: Lav til Høj</a></li>
+                        <li><a class="dropdown-item" href="#">Pris: Høj til Lav</a></li>
                     </ul>
                 </div>
             </div>
@@ -93,5 +93,16 @@ require "settings/init.php";
 
 <script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    document.querySelector("#dropdown");
+    const sort = "ORDER BY productName ASC";
+
+    function changeSort(){
+
+    }
+
+</script>
 </body>
 </html>
