@@ -6,7 +6,7 @@
                     <i class="fa-solid fa-house"></i>
                 </div>
             </div>
-            <a href="kategori.php" class="stretched-link link-dark fw-semibold"><p class="pt-2">Hjem</p></a>
+            <a href="kategori.php" class="stretched-link link-dark fw-semibold"><p class="pt-2">Kategorier</p></a>
         </div>
         <div class="position-relative opacity-75">
             <div class="menu-circle position-relative border border-dark border-3 rounded-circle">

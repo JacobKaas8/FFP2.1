@@ -36,11 +36,16 @@ require "settings/init.php";
             <div class="mt-4">
                 <h2 class="pt-2 fw-semibold">Din kurv</h2>
                 <div class="row mt-3">
-                    <div class="col-2">
-                        <a href="#"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land" class="w-100"></a>
-                    </div>
-                    <div class="col-6">
-                        <a href="#" class="link-dark"><h2 class="fw-semibold pt-1">Kirby Dream Land</h2></a>
+                    <div class="col-8">
+                        <div class="row position-relative">
+                            <a href="#" class="stretched-link"></a>
+                            <div class="col-3">
+                                <img src="img/kirbys-dream-land-game-boy.webp"  alt="Kirby Dream Land" class="img-fluid w-100">
+                            </div>
+                            <div class="col-9">
+                                <h2 class="fw-semibold pt-1">Kirby Dream Land</h2>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-4 pt-1">
                         <div class="row">
@@ -57,11 +62,16 @@ require "settings/init.php";
                     </div>
                 </div>
                 <div class="row mt-3">
-                    <div class="col-2">
-                        <a href="#"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land" class="w-100"></a>
-                    </div>
-                    <div class="col-6">
-                        <a href="#" class="link-dark"><h2 class="fw-semibold pt-1">Kirby Dream Land</h2></a>
+                    <div class="col-8">
+                        <div class="row position-relative">
+                            <a href="#" class="stretched-link"></a>
+                            <div class="col-3">
+                                <img src="img/kirbys-dream-land-game-boy.webp"  alt="Kirby Dream Land" class="img-fluid w-100">
+                            </div>
+                            <div class="col-9">
+                                <h2 class="fw-semibold pt-1">Kirby Dream Land</h2>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-4 pt-1">
                         <div class="row">
