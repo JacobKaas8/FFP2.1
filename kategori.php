@@ -40,7 +40,7 @@ require "settings/init.php";
         ?>
         <div class="col-3">
             <div class="bg-<?php echo $category->catColor ?> p-5 m-auto" style="min-height: 200px; width: 200px">
-            <img src="<?php echo $category->categoryPicture; ?>" class="opacity-75">
+            <img src="catPics/<?php echo $category->categoryPicture; ?>" class="img-fluid opacity-75">
                     <?php
                     echo $category->categoryName;
                     ?>
