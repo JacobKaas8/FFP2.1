@@ -42,31 +42,31 @@ $h2-font-size: 18pt;
 $h3-font-size: 16pt;
 
 $font-sizes: (
-				1: $h1-font-size,
-				2: $h2-font-size,
-				3: $h3-font-size,
+	1: $h1-font-size,
+	2: $h2-font-size,
+	3: $h3-font-size,
 );
 
 $position-values: (
-				0: 0,
-				20: 20%,
-				50: 50%,
-				100: 100%
+	0: 0,
+	20: 20%,
+	50: 50%,
+	100: 100%
 );
 
 $utilities: (
-				"bg-opacity": (
-								css-var: true,
-								class: bg-opacity,
-								values: (
-												10: .1,
-												25: .25,
-												50: .5,
-												75: .75,
-												90: .90,
-												100: 1
-								)
-				)
+	"bg-opacity": (
+		css-var: true,
+		class: bg-opacity,
+		values: (
+			10: .1,
+			25: .25,
+			50: .5,
+			75: .75,
+			90: .90,
+			100: 1
+		)
+	)
 );
 
 @import "bootstrapComponents";
@@ -79,6 +79,7 @@ body, html {
 	background-image: url("../img/bg-bil.png");
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 	color: $dark;
 	font-family: Rajdhani, sans-serif; /* Change font family if desired */
 	font-size: 14pt;
@@ -91,10 +92,12 @@ a {
 
 .overlay {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
-
+.on-index {
+	height: 100%;
+}
 
 .logo {
 	width: 230px;
