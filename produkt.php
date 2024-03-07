@@ -36,26 +36,15 @@ require "settings/init.php";
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mt-4">
-                    <div class="d-flex flex-column gap-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                            <label class="form-check-label" for="flexCheckDefault1">
-                                Action
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2">
-                            <label class="form-check-label" for="flexCheckDefault2">
-                                Adventure
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="col-8">
             <?php include("global.php"); ?>
+            <div class="row mt-2">
+                <div class="col-12 mt-2">
+                    <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover">Spil navn</a></span>
+                </div>
+            </div>
             <div class="row mt-5">
                 <div class="col-4 p-3">
                     <a href="#"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land" class="w-100"></a>
@@ -69,16 +58,8 @@ require "settings/init.php";
                         text of the printing and typesetting industry.</p>
                     <a href="#beskrivelse" class="link-primary">Læs mere</a>
                     <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                    <a href="#">
-                        <button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3">Læg i
-                            kurv
-                        </button>
-                    </a>
-                    <a href="#">
-                        <button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv
-                            spillet
-                        </button>
-                    </a>
+                    <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button></a>
+                    <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
                 </div>
             </div>
             <div class="row mt-4">
