@@ -77,6 +77,12 @@ require "settings/init.php";
 
             $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId"); //javascript for sorting tror jeg (order status)
             foreach ($products as $product) {
+                /*if (!empty($_GET["movId"])) {
+                    echo "<br>Movie length: " . $movie->movLength;
+                    echo "<br>Personal rating: " . $movie->movPerRate;
+                    echo "<br>Released: " . $movie->movRelease;
+                    echo "<br>Is the movie animated?: " . $stringBoolean;
+                }*/
 
             ?>
             <div class="col-4 p-3">

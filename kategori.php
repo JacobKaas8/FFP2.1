@@ -39,11 +39,13 @@ require "settings/init.php";
     foreach($categories as $category) {
         ?>
         <div class="col-3">
-            <div class="bg-<?php echo $category->catColor ?> p-5 m-auto" style="min-height: 200px; width: 200px">
+            <div class="bg-<?php echo $category->catColor ?> p-5 m-auto" style="min-height: 200px;"><a class="" href="kategori-liste.php=<?php echo $category->categoryId ?>">
             <img src="catPics/<?php echo $category->categoryPicture; ?>" class="img-fluid opacity-75">
                     <?php
                     echo $category->categoryName;
                     ?>
+
+                </a>
             </div>
         </div>
         <?php
