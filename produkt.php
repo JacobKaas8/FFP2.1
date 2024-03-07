@@ -59,7 +59,7 @@ require "settings/init.php";
                             text of the printing and typesetting industry.</p>
                         <a href="#beskrivelse" class="link-primary">Læs mere</a>
                         <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button></a>
+                        <button id="addToBasket" class="btn border border-2 border-primary text-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button>
                         <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
                     </div>
                 </div>
@@ -136,6 +136,41 @@ require "settings/init.php";
     </div>
 </div>
 
+<script>
+    const addToBasket = document.querySelector('#addToBasket');
+
+    addToBasket.addEventListener('click', () => {
+        toggleStatus(true);
+    })
+
+    function toggleStatus(isAdded) {
+        addToBasket.classList.remove('text-success');
+        addToBasket.classList.add('text-primary');
+        addToBasket.classList.remove('border-success');
+        addToBasket.classList.add('border-primary');
+        addToBasket.innerHTML = 'Læg i kurv';
+
+        if (isAdded) {
+            addToBasket.classList.remove('text-primary');
+            addToBasket.classList.add('text-success');
+            addToBasket.classList.remove('border-primary');
+            addToBasket.classList.add('border-success');
+            addToBasket.innerHTML = 'Gå til kurv';
+
+            addToBasket.addEventListener('click', () => {
+                window.location = 'kurv.php';
+            })
+        } else {
+            addToBasket.classList.remove('text-success');
+            addToBasket.classList.add('text-primary');
+            addToBasket.classList.remove('border-success');
+            addToBasket.classList.add('border-primary');
+            addToBasket.innerHTML = 'Læg i kurv';
+        }
+    }
+
+    toggleStatus(isAdded(false));
+</script>
 <script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
