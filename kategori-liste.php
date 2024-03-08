@@ -110,7 +110,7 @@ require "settings/init.php";
                     $html .= '<div class="row">';
                     $html .= '<div class="col-4 p-3 d-flex flex">';
                     $html .= '<div class="produkt-box position-relative">';
-                    $html .= '<a href="produkt.php?productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+                    $html .= '<a href="produkt.php?categoryId='. $category->categoryId. 'productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
                     $html .= '<h2 class="pt-2">' . $product->productName . '</h2>';
                     $html .= '<span>' . $product->genreName . '</span>';
                     $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';

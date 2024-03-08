@@ -30,12 +30,27 @@ require "settings/init.php";
             <div class="col-2">
                 <div class="sticky-top">
                     <div class="d-flex justify-content-center">
-                        <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
-                            <a href="#" class="stretched-link"></a>
-                            <div class="position-absolute bottom-0 pb-4">
-                                <h3 class="text-light fw-semibold">Playstation</h3>
+                        <?php
+                        $sqlAdd = "";
+                        $bind = [];
+                        if (!empty($_GET["categoryId"])) {
+                            $sqlAdd = " AND categoryId = :categoryId";
+                            $bind["categoryId"] = $_GET["categoryId"];
+                        }
+                        $categories = $db->sql("SELECT * FROM categories WHERE 1=1 $sqlAdd", $bind);
+                        foreach ($categories as $category) {
+                        if (!empty($_GET["categoryId"])) {
+                            ?>
+                            <div class="d-flex position-relative justify-content-center bookmark bg-<?php echo $category->catColor ?> w-75">
+                                <a href="#" class="stretched-link"></a>
+                                <div class="position-absolute bottom-0 pb-4">
+
+                                    <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
+
+                                </div>
                             </div>
-                        </div>
+                        <?php }
+                        }?>
                     </div>
                 </div>
             </div>
@@ -47,18 +62,29 @@ require "settings/init.php";
                     </div>
                 </div>
                 <div class="row mt-5">
+                    <?php
+                    $sqlAdd = "";
+                    $bind = [];
+                    if (!empty($_GET["productId"])) {
+                    $sqlAdd = " AND productId = :productId";
+                    $bind["productId"] = $_GET["productId"];
+                    }
+                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE 1=1 $sqlAdd", $bind);
+                    foreach ($products as $product) { ?>
+
+
+                    <?php
+                    }
+                    ?>
                     <div class="col-4 p-3">
-                        <a href="#"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land" class="w-100"></a>
+                        <a href="#"><img src="productPics/<?php echo $product->productPicture ?>" alt="Kirby Dream Land" class="w-100"></a>
                     </div>
                     <div class="col-8 p-3">
-                        <h2 class="pt-2 fw-semibold">Kirby Dream Land</h2>
-                        <span><a href="#">Action</a>&nbsp;&nbsp;<a href="#">Adventure</a></span>
-                        <p class="pt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy
-                            text of the printing and typesetting industry.</p>
+                        <h2 class="pt-2 fw-semibold"><?php echo $product->productName ?></h2>
+                        <span><a href="#"><?php echo $product->genreName ?></a></span>
+                        <p class="pt-2"><?php echo $product->productDescription ?></p>
                         <a href="#beskrivelse" class="link-primary">Læs mere</a>
-                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                        <p class="fs-1 fw-semibold pt-2"><?php echo $product->productPrice ?>,- DKK</p>
                         <button id="addToBasket" class="btn border border-2 border-primary text-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button>
                         <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
                     </div>
