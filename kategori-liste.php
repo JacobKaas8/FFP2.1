@@ -107,12 +107,14 @@ require "settings/init.php";
                         echo "<br>Is the movie animated?: " . $stringBoolean;
                     }*/
                 foreach ($products as $product) {
-                    $html .= '<div class="col-4 p-3">';
+                    $html .= '<div class="row">';
+                    $html .= '<div class="col-4 p-3 d-flex flex">';
                     $html .= '<div class="produkt-box position-relative">';
                     $html .= '<a href="#" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
                     $html .= '<h2 class="pt-2">' . $product->productName . '</h2>';
                     $html .= '<span>' . $product->genreName . '</span>';
                     $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
+                    $html .= '</div>';
                     $html .= '</div>';
                     $html .= '</div>';
                 }
