@@ -30,20 +30,26 @@ require "settings/init.php";
             <div class="col-2">
                 <div class="sticky-top">
                     <div class="d-flex justify-content-center">
-                        <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
+                        <?php
+                        $sqlAdd = "";
+                        $bind = [];
+                        if (!empty($_GET["categoryId"])) {
+                            $sqlAdd = " AND categoryId = :categoryId";
+                            $bind["categoryId"] = $_GET["categoryId"];
+                        }
+                        $categories = $db->sql("SELECT * FROM categories WHERE 1=1 $sqlAdd", $bind);
+                        foreach ($categories as $category) {
+                            if (!empty($_GET["categoryId"])) {
+                                ?>
+                        <div class="d-flex position-relative justify-content-center bookmark bg-<?php echo $category->catColor ?> w-75">
                             <a href="#" class="stretched-link"></a>
                             <div class="position-absolute bottom-0 pb-4">
-                                <?php
-                                $categories = $db->sql("SELECT * FROM categories");
-                                foreach ($categories as $category) {
-                                    if (!empty($_GET["categoryId"])) {
-                                        ?>
 
                                         <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
-                                    <?php }
-                                } ?>
+
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                     <div class="d-flex justify-content-center mt-4">
                         <div class="d-flex flex-column gap-3 fs-2 fw-medium">
@@ -92,7 +98,7 @@ require "settings/init.php";
                 </div>
                 <?php
                 $sortOption = $_POST['sortOption'];
-                $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId $sortOption"); //javascript for sorting tror jeg (order status)
+                $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId $sortOption"); //javascript for sorting tror jeg (order status)
                 $html = '';
                 /*if (!empty($_GET["movId"])) {
                         echo "<br>Movie length: " . $movie->movLength;
@@ -118,6 +124,8 @@ require "settings/init.php";
             </div>
         </div>
     </div>
+    <?php
+    } ?>
 </div>
 
 <script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
