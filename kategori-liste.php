@@ -32,7 +32,15 @@ require "settings/init.php";
                         <div class="d-flex position-relative justify-content-center bookmark bg-catCol1 w-75">
                             <a href="#" class="stretched-link"></a>
                             <div class="position-absolute bottom-0 pb-4">
-                                <h3 class="text-light fw-semibold">Playstation</h3>
+                                <?php
+                                $categories = $db->sql("SELECT * FROM categories");
+                                foreach ($categories as $category) {
+                                if (!empty($_GET["categoryId"])) {
+                                ?>
+
+                                <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
+                                <?php }
+                                } ?>
                             </div>
                         </div>
                     </div>
@@ -67,35 +75,35 @@ require "settings/init.php";
                                 A-Å
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Å-A</a></li>
-                                <li><a class="dropdown-item" href="#">Pris: Lav til Høj</a></li>
-                                <li><a class="dropdown-item" href="#">Pris: Høj til Lav</a></li>
+                                <li><a class="dropdown-item" href="#" id="sort-ascending">A-Å</a></li>
+                                <li><a class="dropdown-item" href="#" id="sort-descending">Å-A</a></li>
+                                <li><a class="dropdown-item" href="#" id="sort-price-low-to-high">Pris: Lav til Høj</a></li>
+                                <li><a class="dropdown-item" href="#" id="sort-price-high-to-low">Pris: Høj til Lav</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <?php
-
-                $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId"); //javascript for sorting tror jeg (order status)
-                foreach ($products as $product) {
-                    /*if (!empty($_GET["movId"])) {
+                $sortOption = $_POST['sortOption'];
+                $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId $sortOption"); //javascript for sorting tror jeg (order status)
+                $html = '';
+                /*if (!empty($_GET["movId"])) {
                         echo "<br>Movie length: " . $movie->movLength;
                         echo "<br>Personal rating: " . $movie->movPerRate;
                         echo "<br>Released: " . $movie->movRelease;
                         echo "<br>Is the movie animated?: " . $stringBoolean;
                     }*/
-
-                ?>
-                <div class="col-4 p-3">
-                    <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img class="img-fluid" src="img/<?php echo $product->productPicture ?>" alt=" <?php echo $product->productName ?> "></a>
-                        <h2 class="pt-2"> <?php echo $product->productName ?></h2>
-                        <span> <?php echo $product->genreName //echo $product->genreName . ", " .  $product->productGenre2 .", ". $product->productGenre3 . "<br>";?> </span>
-                        <p class="fs-1 fw-semibold pt-2"> <?php echo $product->productPrice . ",- DKK"; ?> </p>
-                </div>
-            </div>
-                    <?php
-                }
+               foreach ($products as $product) {
+    $html .= '<div class="col-4 p-3">';
+    $html .= '<div class="produkt-box position-relative">';
+    $html .= '<a href="#" class="stretched-link"><img class="img-fluid" src="img/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+    $html .= '<h2 class="pt-2">' . $product->productName . '</h2>';
+    $html .= '<span>' . $product->genreName . '</span>';
+    $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
+    $html .= '</div>';
+    $html .= '</div>';
+}
+                    echo $html;
                 ?>
             </div>
             <div class="col-2 mt-5">
@@ -110,15 +118,48 @@ require "settings/init.php";
 
 <script>
 
-    const dropdown = document.querySelector("#dropdown");
-    const sort = "ORDER BY productName ASC";
+    // Function to initialize the sorting functionality
+    function initializeSorting() {
+        const dropdown = document.querySelector("#dropdown");
+        const productsContainer = document.querySelector(".col-8");
 
-    function changeSort(){
+        const sortOptions = {
+            "sort-ascending": "ORDER BY productName ASC",
+            "sort-descending": "ORDER BY productName DESC",
+            "sort-price-low-to-high": "ORDER BY productPrice ASC",
+            "sort-price-high-to-low": "ORDER BY productPrice DESC"
+        };
 
+        dropdown.addEventListener("click", (event) => {
+            const selectedOptionId = event.target.id;
+            const selectedOption = sortOptions[selectedOptionId];
+            if (selectedOption) {
+                sortProducts(selectedOption);
+            }
+        });
+
+        function sortProducts(sortOption) {
+            fetch("kategori-liste.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ sortOption: sortOption })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Update the products container with the sorted products
+                    productsContainer.innerHTML = data;
+                    // Reinitialize the sorting functionality after products are loaded
+                    initializeSorting();
+                })
+                .catch(error => console.error("Error sorting products:", error));
+        }
     }
-    function productType(){
 
-    }
+    // Call the function to initialize the sorting functionality
+    initializeSorting();
+
 
 </script>
 </body>
