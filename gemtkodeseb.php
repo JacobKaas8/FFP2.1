@@ -56,12 +56,43 @@ require "settings/init.php";
         <div class="col-8">
             <?php include("global.php"); ?>
             <div class="row mt-5">
-                <div class="col-4 p-3">
-                    <div class="produkt-box position-relative">
-                        <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                        <h2 class="pt-2">Kirby Dream Land</h2>
-                        <span>Action, Adventure,</span>
-                        <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                <div class="col-4">
+                    <div class="w-100 bg-white position-relative rounded-4 shadow pt-4 pb-1" style="min-height: 480px;">
+                        <a href="#" class="stretched-link"></a>
+                        <div class="d-flex justify-content-center">
+                            <img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land">
+                        </div>
+                        <div class="ps-4">
+                            <h2 class="pt-2">Kirby Dream Land Kirby Dream Land Kirby Dream Land</h2>
+                            <span>Action, Adventure,</span>
+                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="w-100 bg-light position-relative pt-4 pb-1" style="height: auto;">
+                        <a href="#" class="stretched-link"></a>
+                        <div class="d-flex justify-content-center">
+                            <img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land">
+                        </div>
+                        <div class="ps-3">
+                            <h2 class="pt-2">Kirby Dream Land</h2>
+                            <span>Action, Adventure,</span>
+                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="w-100 bg-light position-relative pt-4 pb-1" style="height: auto;">
+                        <a href="#" class="stretched-link"></a>
+                        <div class="d-flex justify-content-center">
+                            <img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land">
+                        </div>
+                        <div class="ps-3">
+                            <h2 class="pt-2">Kirby Dream Land</h2>
+                            <span>Action, Adventure,</span>
+                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-4 p-3">
