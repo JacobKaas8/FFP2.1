@@ -76,7 +76,7 @@ require "settings/init.php";
                     <div class="col-6 mt-2">
                         <span class="text-dark text-opacity-50"><a href="kategori.php"
                                                                    class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a
-                                    href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a></span>
+                                    href="#" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $category->categoryName ?></a></span>
                     </div>
                     <div class="col-6 d-flex justify-content-end">
                         <div class="dropdown">
@@ -110,7 +110,7 @@ require "settings/init.php";
                     $html .= '<div class="row">';
                     $html .= '<div class="col-4 p-3 d-flex flex">';
                     $html .= '<div class="produkt-box position-relative">';
-                    $html .= '<a href="#" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+                    $html .= '<a href="produkt.php?productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
                     $html .= '<h2 class="pt-2">' . $product->productName . '</h2>';
                     $html .= '<span>' . $product->genreName . '</span>';
                     $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
