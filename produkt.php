@@ -160,12 +160,6 @@ require "settings/init.php";
             addToBasket.addEventListener('click', () => {
                 window.location = 'kurv.php';
             })
-        } else {
-            addToBasket.classList.remove('text-success');
-            addToBasket.classList.add('text-primary');
-            addToBasket.classList.remove('border-success');
-            addToBasket.classList.add('border-primary');
-            addToBasket.innerHTML = 'Læg i kurv';
         }
     }
 

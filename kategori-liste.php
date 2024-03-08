@@ -18,7 +18,8 @@ require "settings/init.php";
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 </head>
 
 <body>
@@ -35,11 +36,11 @@ require "settings/init.php";
                                 <?php
                                 $categories = $db->sql("SELECT * FROM categories");
                                 foreach ($categories as $category) {
-                                if (!empty($_GET["categoryId"])) {
-                                ?>
+                                    if (!empty($_GET["categoryId"])) {
+                                        ?>
 
-                                <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
-                                <?php }
+                                        <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
+                                    <?php }
                                 } ?>
                             </div>
                         </div>
@@ -64,21 +65,27 @@ require "settings/init.php";
                 </div>
             </div>
             <div class="col-8">
-                <?php include("global.php");?>
+                <?php include("global.php"); ?>
                 <div class="row mt-2">
                     <div class="col-6 mt-2">
-                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a></span>
+                        <span class="text-dark text-opacity-50"><a href="kategori.php"
+                                                                   class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a
+                                    href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a></span>
                     </div>
                     <div class="col-6 d-flex justify-content-end">
                         <div class="dropdown">
-                            <button class="btn bg-white border border-2 border-dark border-opacity-25 rounded-3 text-start py-2 px-4 dropdown-toggle" style="min-width: 190px;" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdown">
+                            <button class="btn bg-white border border-2 border-dark border-opacity-25 rounded-3 text-start py-2 px-4 dropdown-toggle"
+                                    style="min-width: 190px;" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" id="dropdown">
                                 A-Å
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#" id="sort-ascending">A-Å</a></li>
                                 <li><a class="dropdown-item" href="#" id="sort-descending">Å-A</a></li>
-                                <li><a class="dropdown-item" href="#" id="sort-price-low-to-high">Pris: Lav til Høj</a></li>
-                                <li><a class="dropdown-item" href="#" id="sort-price-high-to-low">Pris: Høj til Lav</a></li>
+                                <li><a class="dropdown-item" href="#" id="sort-price-low-to-high">Pris: Lav til Høj</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#" id="sort-price-high-to-low">Pris: Høj til Lav</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -93,21 +100,21 @@ require "settings/init.php";
                         echo "<br>Released: " . $movie->movRelease;
                         echo "<br>Is the movie animated?: " . $stringBoolean;
                     }*/
-               foreach ($products as $product) {
-    $html .= '<div class="col-4 p-3">';
-    $html .= '<div class="produkt-box position-relative">';
-    $html .= '<a href="#" class="stretched-link"><img class="img-fluid" src="img/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
-    $html .= '<h2 class="pt-2">' . $product->productName . '</h2>';
-    $html .= '<span>' . $product->genreName . '</span>';
-    $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
-    $html .= '</div>';
-    $html .= '</div>';
-}
-                    echo $html;
+                foreach ($products as $product) {
+                    $html .= '<div class="col-4 p-3">';
+                    $html .= '<div class="produkt-box position-relative">';
+                    $html .= '<a href="#" class="stretched-link"><img class="img-fluid" src="img/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+                    $html .= '<h2 class="pt-2">' . $product->productName . '</h2>';
+                    $html .= '<span>' . $product->genreName . '</span>';
+                    $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
+                    $html .= '</div>';
+                    $html .= '</div>';
+                }
+                echo $html;
                 ?>
             </div>
             <div class="col-2 mt-5">
-                <?php include("menu.php");?>
+                <?php include("menu.php"); ?>
             </div>
         </div>
     </div>
@@ -144,7 +151,7 @@ require "settings/init.php";
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ sortOption: sortOption })
+                body: JSON.stringify({sortOption: sortOption})
             })
                 .then(response => response.json())
                 .then(data => {
