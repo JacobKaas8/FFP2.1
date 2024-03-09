@@ -21,7 +21,7 @@ require "settings/init.php";
 </head>
 
 <body>
-<div class="overlay on-index bg-light bg-opacity-90">
+<div class="overlay on-index bg-light bg-opacity-85">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -64,6 +64,10 @@ require "settings/init.php";
         </div>
     </div>
 </div>
+
+<script>
+
+</script>
 
 <script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
