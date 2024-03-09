@@ -42,7 +42,7 @@ require "settings/init.php";
                             if (!empty($_GET["categoryId"])) {
                                 ?>
                         <div class="d-flex position-relative justify-content-center bookmark bg-<?php echo $category->catColor ?> w-75">
-                            <a href="#" class="stretched-link"></a>
+                            <a href="kategori.php" class="stretched-link"></a>
                             <div class="position-absolute bottom-0 pb-4">
 
                                         <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
@@ -54,10 +54,17 @@ require "settings/init.php";
                     <div class="d-flex justify-content-center mt-4">
                         <div class="d-flex flex-column gap-3 fs-2 fw-medium">
                             <?php
-                            $genres = $db->sql("SELECT * FROM genres ORDER BY genreName asc");
+                            $lpgenre = "d-inline"; // Set default display to inline
+                            $genres = $db->sql("SELECT * FROM genres ORDER BY genreId asc");
                             foreach ($genres as $genre) {
+                                if (!empty($_GET["categoryId"])) {
+                                    $categoryId = intval($_GET["categoryId"]); // Convert to integer
+                                    if ($categoryId < 12 && $genre->genreId > 14) {
+                                        $lpgenre = "d-none"; // Set display to none if conditions are met
+                                    }
+                                }
                                 ?>
-                                <div class="form-check">
+                                <div class="form-check <?php echo $lpgenre ?>">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
                                     <label class="form-check-label" for="flexCheckDefault1">
                                         <?php echo $genre->genreName ?>
@@ -112,7 +119,7 @@ require "settings/init.php";
                         $html .= '<div class="produkt-box w-100 bg-white position-relative rounded-4 shadow pt-4 pb-1">';
                         $html .= '<a href="#" class="stretched-link"></a>';
                         $html .= '<div class="d-flex justify-content-center">';
-                        $html .= '<a href="produkt.php?categoryId='. $category->categoryId. 'productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+                        $html .= '<a href="produkt.php?categoryId='. $category->categoryId. '&productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
                         $html .= '</div>';
                         $html .= '<div class="px-4">';
                         $html .= '<h2 class="pt-3">' . $product->productName . '</h2>';
@@ -139,6 +146,13 @@ require "settings/init.php";
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+
+   /* If genreID is not 12 (!12) {
+
+        d-none
+    }*/
+
+
 
     // Function to initialize the sorting functionality
     function initializeSorting() {
