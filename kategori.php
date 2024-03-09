@@ -27,26 +27,26 @@ require "settings/init.php";
             </div>
             <div class="col-2"></div>
         </div>
-    </div>
-    <div class="row g-5 d-flex justify-content-center text-center mt-2 text-light mx-5">
-        <?php
-        $sqlAdd = "";
-        $bind = [];
-        if (!empty($_GET["categoryId"])) {
-            $sqlAdd = " AND categoryId = :categoryId";
-            $bind["categoryId"] = $_GET["categoryId"];
-        }
-        $categories = $db->sql("SELECT * FROM categories$sqlAdd", $bind);
-        foreach ($categories as $category) {
-            ?>
-            <div class="col-3">
-                <div class="bg-<?php echo $category->catColor ?> p-5 m-auto" style="min-height: 200px;"><a class="" href="kategori-liste.php?categoryId=<?php echo $category->categoryId ?>">
-                        <img src="catPics/<?php echo $category->categoryPicture; ?>" class="img-fluid opacity-75">
-                        <?php
-                        echo $category->categoryName;
-                        ?>
-
-                    </a>
+        <div class="row mt-5 px-3">
+            <?php
+            $sqlAdd = "";
+            $bind = [];
+            if (!empty($_GET["categoryId"])) {
+                $sqlAdd = " AND categoryId = :categoryId";
+                $bind["categoryId"] = $_GET["categoryId"];
+            }
+            $categories = $db->sql("SELECT * FROM categories$sqlAdd", $bind);
+            foreach ($categories as $category) {
+                ?>
+            <div class="col-3 p-3">
+                <div class="position-relative bg-<?php echo $category->catColor ?> rounded-4 shadow text-center w-100 ratio ratio-1x1">
+                    <a href="kategori-liste.php?categoryId=<?php echo $category->categoryId ?>" class="stretched-link"></a>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="catPics/<?php echo $category->categoryPicture; ?>" class="img-fluid opacity-15">
+                        <div class="position-absolute top-50 start-50 translate-middle">
+                            <p class="fs-1 fw-semibold text-light"><?php echo $category->categoryName; ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php

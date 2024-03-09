@@ -68,6 +68,19 @@ $utilities: (
 		)
 	)
 );
+$utilities: (
+	"opacity": (
+		property: opacity,
+		values: (
+			0: 0,
+			15: .15,
+			25: .25,
+			50: .5,
+			75: .75,
+			100: 1,
+		)
+	),
+);
 
 @import "bootstrapComponents";
 
@@ -92,7 +105,8 @@ a {
 
 .overlay {
 	width: 100%;
-	height: auto;
+	height: 100%;
+	overflow: auto;
 }
 
 .on-index {

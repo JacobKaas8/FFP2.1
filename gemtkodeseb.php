@@ -24,6 +24,69 @@ require "settings/init.php";
 <body>
 
 <div class="container-fluid">
+    <div class="row px-3">
+        <div class="col-3 p-3">
+            <div class="position-relative bg-catCol1 rounded-4 text-center w-100 ratio ratio-1x1">
+                <a href="kategori-liste.php" class="stretched-link"></a>
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="catPics/xbox.webp" class="img-fluid opacity-25">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <p class="fs-1 fw-semibold text-light">Xbox 360</p>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-3 p-3">
+            <div class="position-relative bg-catCol1 text-center w-100 ratio ratio-1x1">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="catPics/xbox.webp" class="img-fluid opacity-25">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <a class="fs-1 fw-semibold link-light" href="kategori-liste.php">Xbox 360</a>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-3 p-3">
+            <div class="position-relative bg-catCol1 text-center w-100 ratio ratio-1x1">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="catPics/xbox.webp" class="img-fluid opacity-25">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <a class="fs-1 fw-semibold link-light" href="kategori-liste.php">Xbox 360</a>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-3 p-3">
+            <div class="position-relative bg-catCol1 text-center w-100 ratio ratio-1x1">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="catPics/xbox.webp" class="img-fluid opacity-25">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <a class="fs-1 fw-semibold link-light" href="kategori-liste.php">Xbox 360</a>
+                    </div>
+                </div>
+            </div>
+        </div><div class="col-3 p-3">
+            <div class="position-relative bg-catCol1 text-center w-100 ratio ratio-1x1">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="catPics/xbox.webp" class="img-fluid opacity-25">
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                        <a class="fs-1 fw-semibold link-light" href="kategori-liste.php">Xbox 360</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container-fluid">
     <div class="row">
         <div class="col-2">
             <div class="sticky-top">
