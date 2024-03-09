@@ -54,20 +54,7 @@ $position-values: (
 	100: 100%
 );
 
-$utilities: (
-	"bg-opacity": (
-		css-var: true,
-		class: bg-opacity,
-		values: (
-			10: .1,
-			25: .25,
-			50: .5,
-			75: .75,
-			90: .90,
-			100: 1
-		)
-	)
-);
+
 $utilities: (
 	"opacity": (
 		property: opacity,
@@ -80,7 +67,22 @@ $utilities: (
 			100: 1,
 		)
 	),
+
+	"bg-opacity": (
+		css-var: true,
+		class: bg-opacity,
+		values: (
+			10: .1,
+			25: .25,
+			50: .5,
+			75: .75,
+			90: .90,
+			100: 1
+		)
+	),
 );
+
+
 
 @import "bootstrapComponents";
 
