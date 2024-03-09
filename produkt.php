@@ -115,13 +115,7 @@ require "settings/init.php";
                     </div>
                     <div class="col-8">
                         <h2 class="pt-2 fw-semibold" id="beskrivelse">Beskrivelse</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                            of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the
-                            printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-                            since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five centuries, but also the leap into electronic
-                            typesetting.</p>
+                        <p><?php echo $product->productDescription ?></p>
                     </div>
                 </div>
                 <div class="row mt-4 mb-4">
@@ -131,7 +125,7 @@ require "settings/init.php";
 
                     <?php
                     $sortOption = $_POST['sortOption'];
-                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId"); //javascript for sorting tror jeg (order status)
+                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId ORDER BY RAND() LIMIT 3"); //javascript for sorting tror jeg (order status)
                     $html = '';
                     /*if (!empty($_GET["movId"])) {
                             echo "<br>Movie length: " . $movie->movLength;
