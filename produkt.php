@@ -128,33 +128,34 @@ require "settings/init.php";
                     <div class="col-12">
                         <h2 class="pt-2 fw-semibold">Relaterede produkter</h2>
                     </div>
-                    <div class="col-4 p-3">
-                        <div class="produkt-box position-relative">
-                            <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp"
-                                                                    alt="Kirby Dream Land"></a>
-                            <h2 class="pt-2">Kirby Dream Land</h2>
-                            <span>Action, Adventure,</span>
-                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        </div>
-                    </div>
-                    <div class="col-4 p-3">
-                        <div class="produkt-box position-relative">
-                            <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp"
-                                                                    alt="Kirby Dream Land"></a>
-                            <h2 class="pt-2">Kirby Dream Land</h2>
-                            <span>Action, Adventure,</span>
-                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        </div>
-                    </div>
-                    <div class="col-4 p-3">
-                        <div class="produkt-box position-relative">
-                            <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp"
-                                                                    alt="Kirby Dream Land"></a>
-                            <h2 class="pt-2">Kirby Dream Land</h2>
-                            <span>Action, Adventure,</span>
-                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        </div>
-                    </div>
+
+                    <?php
+                    $sortOption = $_POST['sortOption'];
+                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId"); //javascript for sorting tror jeg (order status)
+                    $html = '';
+                    /*if (!empty($_GET["movId"])) {
+                            echo "<br>Movie length: " . $movie->movLength;
+                            echo "<br>Personal rating: " . $movie->movPerRate;
+                            echo "<br>Released: " . $movie->movRelease;
+                            echo "<br>Is the movie animated?: " . $stringBoolean;
+                        }*/
+                    foreach ($products as $product) {
+                        $html .= '<div class="col-4 p-3">';
+                        $html .= '<div class="produkt-box w-100 bg-white position-relative rounded-4 shadow pt-4 pb-1">';
+                        $html .= '<div class="d-flex justify-content-center">';
+                        $html .= '<a href="produkt.php?categoryId='. $category->categoryId. '&productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+                        $html .= '</div>';
+                        $html .= '<div class="px-4">';
+                        $html .= '<h2 class="pt-3">' . $product->productName . '</h2>';
+                        $html .= '<span>' . $product->genreName . '</span>';
+                        $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
+                        $html .= '</div>';
+                        $html .= '</div>';
+                        $html .= '</div>';
+                    }
+                    echo $html;
+                    ?>
+
                 </div>
             </div>
             <div class="col-2 mt-5">
