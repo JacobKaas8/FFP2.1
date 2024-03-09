@@ -42,49 +42,40 @@ require "settings/init.php";
                         if (!empty($_GET["categoryId"])) {
                             ?>
                             <div class="d-flex position-relative justify-content-center bookmark bg-<?php echo $category->catColor ?> w-75">
-                                <a href="kategori.php" class="stretched-link"></a>
+                                <a href="#" class="stretched-link"></a>
                                 <div class="position-absolute bottom-0 pb-4">
 
                                     <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
 
                                 </div>
                             </div>
-
+                        <?php }
+                        }?>
                     </div>
                 </div>
             </div>
             <div class="col-8">
                 <?php include("global.php"); ?>
                 <div class="row mt-2">
+                    <div class="col-12 mt-2">
+                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover">Spil navn</a></span>
+                    </div>
+                </div>
+                <div class="row mt-5">
                     <?php
                     $sqlAdd = "";
                     $bind = [];
                     if (!empty($_GET["productId"])) {
-                        $sqlAdd = " AND productId = :productId";
-                        $bind["productId"] = $_GET["productId"];
+                    $sqlAdd = " AND productId = :productId";
+                    $bind["productId"] = $_GET["productId"];
                     }
-                    $products = $db->sql("SELECT * FROM products INNER JOIN categories ON productId=categoryId WHERE 1=1 $sqlAdd", $bind);
-                    foreach ($products as $product) {
-                    ?>
                     $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE 1=1 $sqlAdd", $bind);
                     foreach ($products as $product) { ?>
-                    <div class="col-12 mt-2">
-                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php?categoryId=<?php echo $category->categoryId ?>" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $category->categoryName ?></a> / <a href="#" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $product->productName ?></a></span>
-                        <?php }
-                        }?>
-                    </div>
-                </div>
-                <div class="row mt-5">
 
 
                     <?php
                     }
                     ?>
-                    <div class="col-12 mt-2">
-                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $category->categoryName ?></a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $product->productName ?></a></span>
-                    </div>
-                </div>
-                <div class="row mt-5">
                     <div class="col-4 p-3">
                         <a href="#"><img src="productPics/<?php echo $product->productPicture ?>" alt="Kirby Dream Land" class="w-100"></a>
                     </div>
@@ -97,9 +88,6 @@ require "settings/init.php";
                         <button id="addToBasket" class="btn border border-2 border-primary text-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button>
                         <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
                     </div>
-                        <?php
-                    }
-                    ?>
                 </div>
                 <div class="row mt-4">
                     <div class="col-4">
