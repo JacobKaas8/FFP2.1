@@ -124,7 +124,6 @@ require "settings/init.php";
                     </div>
 
                     <?php
-                    $sortOption = $_POST['sortOption'];
                     $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId ORDER BY RAND() LIMIT 3"); //javascript for sorting tror jeg (order status)
                     $html = '';
                     /*if (!empty($_GET["movId"])) {

@@ -26,6 +26,20 @@ require "settings/init.php";
 <div class="overlay bg-light bg-opacity-90">
     <div class="container-fluid">
         <div class="row">
+
+            <?php
+            $sqlAdd = "";
+            $bind = [];
+            if (!empty($_GET["categoryId"])) {
+                $sqlAdd = " AND categoryId = :categoryId";
+                $bind["categoryId"] = $_GET["categoryId"];
+            }
+            $categories = $db->sql("SELECT * FROM categories WHERE 1=1 $sqlAdd", $bind);
+            foreach ($categories as $category) {
+
+                ?>
+            <?php } ?>
+
             <div class="col-2"></div>
             <div class="col-8">
                 <?php include("global.php"); ?>
@@ -112,31 +126,31 @@ require "settings/init.php";
                     <div class="col-12">
                         <h2 class="pt-2 fw-semibold">Andre køber også</h2>
                     </div>
-                    <div class="col-4 p-3">
-                        <div class="produkt-box position-relative">
-                            <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp"
-                                                                    alt="Kirby Dream Land"></a>
-                            <h2 class="pt-2">Kirby Dream Land</h2>
-                            <span>Action, Adventure,</span>
-                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        </div>
-                    </div>
-                    <div class="col-4 p-3">
-                        <div class="produkt-box position-relative">
-                            <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                            <h2 class="pt-2">Kirby Dream Land</h2>
-                            <span>Action, Adventure,</span>
-                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        </div>
-                    </div>
-                    <div class="col-4 p-3">
-                        <div class="produkt-box position-relative">
-                            <a href="#" class="stretched-link"><img src="img/kirbys-dream-land-game-boy.webp" alt="Kirby Dream Land"></a>
-                            <h2 class="pt-2">Kirby Dream Land</h2>
-                            <span>Action, Adventure,</span>
-                            <p class="fs-1 fw-semibold pt-2">200,- DKK</p>
-                        </div>
-                    </div>
+                    <?php
+                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId ORDER BY RAND() LIMIT 3"); //javascript for sorting tror jeg (order status)
+                    $html = '';
+                    /*if (!empty($_GET["movId"])) {
+                            echo "<br>Movie length: " . $movie->movLength;
+                            echo "<br>Personal rating: " . $movie->movPerRate;
+                            echo "<br>Released: " . $movie->movRelease;
+                            echo "<br>Is the movie animated?: " . $stringBoolean;
+                        }*/
+                    foreach ($products as $product) {
+                        $html .= '<div class="col-4 p-3">';
+                        $html .= '<div class="produkt-box w-100 bg-white position-relative rounded-4 shadow pt-4 pb-1">';
+                        $html .= '<div class="d-flex justify-content-center">';
+                        $html .= '<a href="produkt.php?categoryId='. $product->productCategoryId. '&productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
+                        $html .= '</div>';
+                        $html .= '<div class="px-4">';
+                        $html .= '<h2 class="pt-3">' . $product->productName . '</h2>';
+                        $html .= '<span>' . $product->genreName . '</span>';
+                        $html .= '<p class="fs-1 fw-semibold pt-2">' . $product->productPrice . ',- DKK</p>';
+                        $html .= '</div>';
+                        $html .= '</div>';
+                        $html .= '</div>';
+                    }
+                    echo $html;
+                    ?>
                 </div>
             </div>
             <div class="col2"></div>
