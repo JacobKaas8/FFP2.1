@@ -83,7 +83,7 @@ require "settings/init.php";
                     </div>
                     <div class="col-8 p-3">
                         <h2 class="pt-2 fw-semibold"><?php echo $product->productName ?></h2>
-                        <span><a href="#"><?php echo $product->genreName ?></a></span>
+                        <span><a href="kategori-liste.php?categoryId=<?php echo $category->categoryId ?>"><?php echo $product->genreName ?></a></span>
                         <p class="pt-2"><?php echo $product->productDescription ?></p>
                         <a href="#beskrivelse" class="link-primary">Læs mere</a>
                         <p class="fs-1 fw-semibold pt-2"><?php echo $product->productPrice ?>,- DKK</p>
