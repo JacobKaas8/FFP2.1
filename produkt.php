@@ -57,25 +57,25 @@ require "settings/init.php";
             <div class="col-8">
                 <?php include("global.php"); ?>
                 <div class="row mt-2">
+                    <div class="col-12 mt-2">
+                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover">Spil navn</a></span>
+                    </div>
+                </div>
+                <div class="row mt-5">
                     <?php
                     $sqlAdd = "";
                     $bind = [];
                     if (!empty($_GET["productId"])) {
-                        $sqlAdd = " AND productId = :productId";
-                        $bind["productId"] = $_GET["productId"];
+                    $sqlAdd = " AND productId = :productId";
+                    $bind["productId"] = $_GET["productId"];
                     }
-                    $products = $db->sql("SELECT * FROM products INNER JOIN categories ON productId=categoryId WHERE 1=1 $sqlAdd", $bind);
-                    foreach ($products as $product) {
-                    ?>
+                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE 1=1 $sqlAdd", $bind);
+                    foreach ($products as $product) { ?>
+
 
                     <?php
                     }
                     ?>
-                    <div class="col-12 mt-2">
-                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $category->categoryName ?></a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $product->productName ?></a></span>
-                    </div>
-                </div>
-                <div class="row mt-5">
                     <div class="col-4 p-3">
                         <a href="#"><img src="productPics/<?php echo $product->productPicture ?>" alt="Kirby Dream Land" class="w-100"></a>
                     </div>
