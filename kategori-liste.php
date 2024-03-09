@@ -110,7 +110,6 @@ require "settings/init.php";
                     foreach ($products as $product) {
                         $html .= '<div class="col-4 p-3">';
                         $html .= '<div class="produkt-box w-100 bg-white position-relative rounded-4 shadow pt-4 pb-1">';
-                        $html .= '<a href="#" class="stretched-link"></a>';
                         $html .= '<div class="d-flex justify-content-center">';
                         $html .= '<a href="produkt.php?categoryId='. $category->categoryId. 'productId=' . $product->productId. '" class="stretched-link"><img class="img-fluid" src="productPics/' . $product->productPicture . '" alt="' . $product->productName . '"></a>';
                         $html .= '</div>';
