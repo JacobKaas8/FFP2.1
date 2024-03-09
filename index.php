@@ -21,7 +21,7 @@ require "settings/init.php";
 </head>
 
 <body>
-<div class="overlay on-index bg-light bg-opacity-90">
+<div class="overlay on-index bg-light bg-opacity-85">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
