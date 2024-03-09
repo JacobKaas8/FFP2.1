@@ -42,7 +42,7 @@ require "settings/init.php";
                         if (!empty($_GET["categoryId"])) {
                             ?>
                             <div class="d-flex position-relative justify-content-center bookmark bg-<?php echo $category->catColor ?> w-75">
-                                <a href="#" class="stretched-link"></a>
+                                <a href="kategori.php" class="stretched-link"></a>
                                 <div class="position-absolute bottom-0 pb-4">
 
                                     <h3 class="text-light fw-semibold"> <?php echo $category->categoryName ?> </h3>
@@ -58,11 +58,7 @@ require "settings/init.php";
                 <?php include("global.php"); ?>
                 <div class="row mt-2">
                     <div class="col-12 mt-2">
-                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php" class="link-dark link-opacity-50 link-opacity-100-hover">Playstation</a> / <a href="produkt.php" class="link-dark link-opacity-50 link-opacity-100-hover">Spil navn</a></span>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <?php
+                        <?php
                     $sqlAdd = "";
                     $bind = [];
                     if (!empty($_GET["productId"])) {
@@ -70,12 +66,18 @@ require "settings/init.php";
                     $bind["productId"] = $_GET["productId"];
                     }
                     $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE 1=1 $sqlAdd", $bind);
-                    foreach ($products as $product) { ?>
 
+                        foreach ($products
 
-                    <?php
-                    }
-                    ?>
+                        as $product) {
+
+                        }
+                        ?>
+
+                        <span class="text-dark text-opacity-50"><a href="kategori.php" class="link-dark link-opacity-50 link-opacity-100-hover">Kategorier</a> / <a href="kategori-liste.php?categoryId=<?php echo $category->categoryId ?>" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $category->categoryName ?></a> / <a href="#" class="link-dark link-opacity-50 link-opacity-100-hover"><?php echo $product->productName ?></a></span>
+                    </div>
+                </div>
+                <div class="row mt-5">
                     <div class="col-4 p-3">
                         <a href="#"><img src="productPics/<?php echo $product->productPicture ?>" alt="Kirby Dream Land" class="w-100"></a>
                     </div>
