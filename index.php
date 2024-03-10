@@ -3,7 +3,7 @@ require "settings/init.php";
 ?>
 <!DOCTYPE html>
 <html lang="da">
-<head>
+<div>
 	<meta charset="utf-8">
 
 
@@ -23,6 +23,9 @@ require "settings/init.php";
          <img class="showing background" src="img/bg1.webp"
          <img class="background" src="img/bg2.webp"
          <img class="background" src="img/bg3.webp"
+</div>
+
+
 </head>
 
 <body>
@@ -70,10 +73,7 @@ require "settings/init.php";
     </div>
 </div>
 
-<script src="main.js">
-
-</script>
-
+<script src="main.js"></script>
 <script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
