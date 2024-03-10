@@ -52,19 +52,19 @@ require "settings/init.php";
                     <h2 class="pt-2 fw-semibold">Din kurv</h2>
                     <div class="row mt-3">
                         <div class="col-8">
-                            <div class="row position-relative">
-                                <a href="produkt.php" class="stretched-link"></a>
-                                <?php
-                                $sqlAdd = "";
-                                $bind = [];
-                                if (!empty($_GET["productId"])) {
+                            <?php
+                            $sqlAdd = "";
+                            $bind = [];
+                            if (!empty($_GET["productId"])) {
                                 $sqlAdd = " AND productId = :productId";
                                 $bind["productId"] = $_GET["productId"];
-                                }
-                                $products = $db->sql("SELECT * FROM products WHERE 1=1 $sqlAdd", $bind);
-                                foreach ($products as $product) {
-                                    if (!empty($_GET["productId"])){
-?>
+                            }
+                            $products = $db->sql("SELECT * FROM products WHERE 1=1 $sqlAdd", $bind);
+                            foreach ($products as $product) {
+                            if (!empty($_GET["productId"])){
+                            ?>
+                            <div class="row position-relative">
+                                <a href="produkt.php?productId=<?php echo $product->productId ?>" class="stretched-link"></a>
 
                                 <div class="col-3">
                                     <img src="productPics/<?php echo $product->productPicture ?>"  alt="<?php echo $product->productName ?>" class="img-fluid w-100">
@@ -92,12 +92,12 @@ require "settings/init.php";
                         <div class="col-12 text-end">
                             <span>Subtotal</span>
                             <h2 class="fw-semibold pt-1"><?php echo $product->productPrice ?>,- DKK</h2>
+                            <?php
+                            }
+                            }
+                            ?>
                         </div>
                     </div>
-                    <?php
-                    }
-                    }
-                    ?>
                 </div>
                 <div class="text-center mt-3">
                     <a type="button" id="viewBtn" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3" data-bs-toggle="modal" data-bs-target="#viewProducts">Få fremvist varer</a>
