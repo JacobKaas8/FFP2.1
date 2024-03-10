@@ -54,11 +54,23 @@ require "settings/init.php";
                         <div class="col-8">
                             <div class="row position-relative">
                                 <a href="produkt.php" class="stretched-link"></a>
+                                <?php
+                                $sqlAdd = "";
+                                $bind = [];
+                                if (!empty($_GET["productId"])) {
+                                $sqlAdd = " AND productId = :productId";
+                                $bind["productId"] = $_GET["productId"];
+                                }
+                                $products = $db->sql("SELECT * FROM products WHERE 1=1 $sqlAdd", $bind);
+                                foreach ($products as $product) {
+                                    if (!empty($_GET["productId"])){
+?>
+
                                 <div class="col-3">
-                                    <img src="img/kirbys-dream-land-game-boy.webp"  alt="Kirby Dream Land" class="img-fluid w-100">
+                                    <img src="productPics/<?php echo $product->productPicture ?>"  alt="<?php echo $product->productName ?>" class="img-fluid w-100">
                                 </div>
                                 <div class="col-9">
-                                    <h2 class="fw-semibold pt-1">Kirby Dream Land</h2>
+                                    <h2 class="fw-semibold pt-1"><?php echo $product->productName ?></h2>
                                 </div>
                             </div>
                         </div>
@@ -71,33 +83,7 @@ require "settings/init.php";
                                     <a href="#"><p class="pt-2">Fjern vare</p></a>
                                 </div>
                                 <div class="col-5 text-end">
-                                    <h2 class="fw-semibold pt-1">200,- DKK</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-8">
-                            <div class="row position-relative">
-                                <a href="produkt.php" class="stretched-link"></a>
-                                <div class="col-3">
-                                    <img src="img/kirbys-dream-land-game-boy.webp"  alt="Kirby Dream Land" class="img-fluid w-100">
-                                </div>
-                                <div class="col-9">
-                                    <h2 class="fw-semibold pt-1">Kirby Dream Land</h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4 pt-1">
-                            <div class="row">
-                                <div class="col-3"></div>
-                                <div class="col-4">
-                                    <label for="antalInput2" class="form-label">Antal</label>
-                                    <input type="number" class="form-control w-75" min="1" step="1" placeholder="1" id="antalInput2">
-                                    <a href="#"><p class="pt-2">Fjern vare</p></a>
-                                </div>
-                                <div class="col-5 text-end">
-                                    <h2 class="fw-semibold pt-1">200,- DKK</h2>
+                                    <h2 class="fw-semibold pt-1"><?php echo $product->productPrice ?>,- DKK</h2>
                                 </div>
                             </div>
                         </div>
@@ -105,9 +91,13 @@ require "settings/init.php";
                     <div class="row mt-3">
                         <div class="col-12 text-end">
                             <span>Subtotal</span>
-                            <h2 class="fw-semibold pt-1">400,- DKK</h2>
+                            <h2 class="fw-semibold pt-1"><?php echo $product->productPrice ?>,- DKK</h2>
                         </div>
                     </div>
+                    <?php
+                    }
+                    }
+                    ?>
                 </div>
                 <div class="text-center mt-3">
                     <a type="button" id="viewBtn" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2 me-3" data-bs-toggle="modal" data-bs-target="#viewProducts">Få fremvist varer</a>

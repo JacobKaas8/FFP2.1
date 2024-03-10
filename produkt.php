@@ -122,6 +122,35 @@ require "settings/init.php";
                     <div class="col-12">
                         <h2 class="pt-2 fw-semibold">Relaterede produkter</h2>
                     </div>
+                    <script>
+                        const addToBasket = document.querySelector('#addToBasket');
+
+                        addToBasket.addEventListener('click', () => {
+                            toggleStatus(true);
+                        })
+
+                        function toggleStatus(isAdded) {
+                            addToBasket.classList.remove('text-success');
+                            addToBasket.classList.add('text-primary');
+                            addToBasket.classList.remove('border-success');
+                            addToBasket.classList.add('border-primary');
+                            addToBasket.innerHTML = 'Læg i kurv';
+
+                            if (isAdded) {
+                                addToBasket.classList.remove('text-primary');
+                                addToBasket.classList.add('text-success');
+                                addToBasket.classList.remove('border-primary');
+                                addToBasket.classList.add('border-success');
+                                addToBasket.innerHTML = 'Gå til kurv';
+
+                                addToBasket.addEventListener('click', () => {
+                                    window.location = 'kurv.php?productId=<?php echo $product->productId ?>';
+                                })
+                            }
+                        }
+
+                        toggleStatus(isAdded(false));
+                    </script>
 
                     <?php
                     $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId ORDER BY RAND() LIMIT 3"); //javascript for sorting tror jeg (order status)
@@ -158,35 +187,6 @@ require "settings/init.php";
     </div>
 </div>
 
-<script>
-    const addToBasket = document.querySelector('#addToBasket');
-
-    addToBasket.addEventListener('click', () => {
-        toggleStatus(true);
-    })
-
-    function toggleStatus(isAdded) {
-        addToBasket.classList.remove('text-success');
-        addToBasket.classList.add('text-primary');
-        addToBasket.classList.remove('border-success');
-        addToBasket.classList.add('border-primary');
-        addToBasket.innerHTML = 'Læg i kurv';
-
-        if (isAdded) {
-            addToBasket.classList.remove('text-primary');
-            addToBasket.classList.add('text-success');
-            addToBasket.classList.remove('border-primary');
-            addToBasket.classList.add('border-success');
-            addToBasket.innerHTML = 'Gå til kurv';
-
-            addToBasket.addEventListener('click', () => {
-                window.location = 'kurv.php';
-            })
-        }
-    }
-
-    toggleStatus(isAdded(false));
-</script>
 <script src="https://kit.fontawesome.com/73a430866d.js" crossorigin="anonymous"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
