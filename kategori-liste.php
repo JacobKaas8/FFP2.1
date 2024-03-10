@@ -103,17 +103,11 @@ require "settings/init.php";
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5">
+
+                <div class="row mt-5" id="prodList">
                     <?php
                     $sortOption = $_POST['sortOption'];
-                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId $sortOption"); //javascript for sorting tror jeg (order status)
-                    $html = '';
-                    /*if (!empty($_GET["movId"])) {
-                            echo "<br>Movie length: " . $movie->movLength;
-                            echo "<br>Personal rating: " . $movie->movPerRate;
-                            echo "<br>Released: " . $movie->movRelease;
-                            echo "<br>Is the movie animated?: " . $stringBoolean;
-                        }*/
+                    $products = $db->sql("SELECT * FROM products INNER JOIN genres ON productGenre1=genreId WHERE productCategoryId = $category->categoryId ORDER BY productName ASC"); //javascript for sorting tror jeg (order status)
                     foreach ($products as $product) {
                         $html .= '<div class="col-4 p-3">';
                         $html .= '<div class="produkt-box w-100 bg-white position-relative rounded-4 shadow pt-4 pb-1">';
