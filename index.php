@@ -20,7 +20,7 @@ require "settings/init.php";
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <div class="backgrounds-container"
-         <img class="background" src="img/bg1.webp"
+         <img class="showing background" src="img/bg1.webp"
          <img class="background" src="img/bg2.webp"
          <img class="background" src="img/bg3.webp"
 </head>
@@ -70,7 +70,7 @@ require "settings/init.php";
     </div>
 </div>
 
-<script>
+<script src="main.js">
 
 </script>
 
