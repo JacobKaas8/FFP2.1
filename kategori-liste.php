@@ -24,6 +24,7 @@ require "settings/init.php";
 
 <body>
 
+<div class="bg-noindex"></div>
 <div class="overlay bg-light bg-opacity-90">
     <div class="container-fluid">
         <div class="row">
