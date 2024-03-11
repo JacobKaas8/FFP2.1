@@ -89,7 +89,6 @@ require "settings/init.php";
                         <a href="#beskrivelse" class="link-primary">Læs mere</a>
                         <p class="fs-1 fw-semibold pt-2"><?php echo $product->productPrice ?>,- DKK</p>
                         <button id="addToBasket" class="btn border border-2 border-primary text-primary fw-semibold px-5 py-2 me-3">Læg i kurv</button>
-                        <a href="#"><button class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Prøv spillet</button></a>
                     </div>
                 </div>
                 <div class="row mt-4">

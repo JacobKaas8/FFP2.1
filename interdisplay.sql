@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 INSERT INTO `products` (`productId`, `productName`, `productGenre1`, `productGenre2`, `produktGenre3`, `productDescription`, `productPicture`, `productPrice`, `productCategoryId`, `productTime`) VALUES
 (1, 'Star Wars, Original udgivelse', 3, 1, NULL, 'In a lorem far far ipsum', 'starwars.webp', 200, 11, '2024-03-04 20:26:18'),
 (2, 'Call of Duty 1', 1, NULL, NULL, 'Smoke weed everyday.', 'codps1.webp', 198, 1, '2024-03-07 11:09:41'),
-(3, 'Crash Bandicoot 2: Cortex Strikes Back', 2, NULL, NULL, 'Awookawakka!', 'crash-bandicoot-2-cortex-strikes-back', 350, 1, '2024-03-07 11:09:41'),
+(3, 'Crash Bandicoot 2: Cortex Strikes Back', 2, NULL, NULL, 'Awookawakka!', 'crash-bandicoot-2-cortex-strikes-back.webp', 350, 1, '2024-03-07 11:09:41'),
 (4, 'Final Fantasy VIII', 9, NULL, NULL, 'Suposedly the best Final Fantasy from the PlayStation 2 Era!', 'ffs.webp', 700, 1, '2024-03-07 11:09:41'),
 (5, 'FIFA 99', 10, NULL, NULL, 'Fussbal!', 'fifa99-Done.webp', 120, 1, '2024-03-07 11:09:41'),
 (6, 'Grand Theft Auto 1', 1, NULL, NULL, 'Uh huh HUH!', 'gtaps1.webp', 460, 1, '2024-03-07 11:09:41'),
