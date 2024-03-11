@@ -23,10 +23,10 @@ require "settings/init.php";
 
 <body>
 <div class="slide" id="scroll-image">
-    <img src="../ffp2.1/img/bg2.webp" class="slider img-fluid" />
-    <img src="../ffp2.1/img/bg3.webp" class="slider img-fluid" />
-    <img src="../ffp2.1/img/bg4.webp" class="slider img-fluid" />
-    <img src="../ffp2.1/img/bg1.webp" class="slider img-fluid" />
+    <img src="http://jerytter.dk/FFP2.1/img/bg2.webp" class="slider img-fluid" />
+    <img src="http://jerytter.dk/FFP2.1/img/bg3.webp" class="slider img-fluid" />
+    <img src="http://jerytter.dk/FFP2.1/img/bg4.webp" class="slider img-fluid" />
+    <img src="http://jerytter.dk/FFP2.1/img/bg1.webp" class="slider img-fluid" />
 </div>
 <div class="overlay on-index bg-light bg-opacity-85">
     <div class="container-fluid">
