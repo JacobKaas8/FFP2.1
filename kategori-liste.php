@@ -66,8 +66,8 @@ require "settings/init.php";
                                 }
                                 ?>
                                 <div class="form-check <?php echo $lpgenre ?>">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1">
-                                    <label class="form-check-label" for="flexCheckDefault1">
+                                    <input class="form-check-input" type="checkbox" value="" id="<?php echo $genre->genreId  ?>">
+                                    <label class="form-check-label" for="<?php echo $genre->genreId  ?>">
                                         <?php echo $genre->genreName ?>
                                     </label>
                                 </div>

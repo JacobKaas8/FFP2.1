@@ -61,7 +61,7 @@
                 <p>Du har nu kaldt efter assistance. En medarbejder vil være hos dig om et øjeblik.<br><br>Dette vindue kan nu lukkes.</p>
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <a href="index.php" type="button" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2">Luk vindue</a>
+                <button type="button" class="btn border border-2 border-primary link-primary fw-semibold px-5 py-2" data-bs-dismiss="modal" aria-label="Close">Luk vindue</button>
             </div>
         </div>
     </div>
