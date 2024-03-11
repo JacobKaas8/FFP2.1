@@ -80,7 +80,7 @@ require "settings/init.php";
                 </div>
                 <div class="row mt-5">
                     <div class="col-4 p-3">
-                        <a href="#"><img src="productPics/<?php echo $product->productPicture ?>" alt="Kirby Dream Land" class="w-100"></a>
+                        <a href="kategori-liste.php?categoryId=<?php echo $category->categoryId ?>"><img src="productPics/<?php echo $product->productPicture ?>" alt="Kirby Dream Land" class="w-100 rounded-4 shadow"></a>
                     </div>
                     <div class="col-8 p-3">
                         <h2 class="pt-2 fw-semibold"><?php echo $product->productName ?></h2>

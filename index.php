@@ -154,7 +154,7 @@ require "settings/init.php";
         /* This function changes the opacity of
         current image at regular intervals*/
         function transition() {
-            return new Promise(function (resolve, reject) {
+            return new Promise(function (resolve) {
 
                 // del is the value by which opacity is
                 // decreased every interval
