@@ -4,7 +4,7 @@ let imageindex = 0;
 
 function changeBackground() {
     // Remove .showing class from current background
-    headerBackgrounds[imageindex].classList.remove("showing");
+    headerBackgrounds[imageindex].classList.remove(".showing");
 
     // Increment the image index by one
     imageindex++;
@@ -15,7 +15,9 @@ function changeBackground() {
     }
 
     // Add the .showing class to the next background
-    headerBackgrounds[imageindex].classList.add("showing")
+    headerBackgrounds[imageindex].classList.add(".showing")
 }
 
 setInterval(changeBackground, 5000)
+
+console.log(changeBackground);

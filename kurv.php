@@ -64,8 +64,6 @@ require "settings/init.php";
                             if (!empty($_GET["productId"])){
                             ?>
                             <div class="row position-relative">
-                                <a href="produkt.php?productId=<?php echo $product->productId ?>" class="stretched-link"></a>
-
                                 <div class="col-3">
                                     <img src="productPics/<?php echo $product->productPicture ?>"  alt="<?php echo $product->productName ?>" class="img-fluid w-100">
                                 </div>
